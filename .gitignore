@@ -1,3 +1,5 @@
+db.properties
 target/
 .idea/
 .attach_pid*
+spring_hibernate.iml
