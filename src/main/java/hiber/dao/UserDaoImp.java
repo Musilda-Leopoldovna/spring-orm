@@ -36,8 +36,9 @@ public class UserDaoImp implements UserDao {
       TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
       query.setParameter("model", model);
       query.setParameter("series", series);
-      String resultName = query.getSingleResult().getFirstName();
-      String resultLastName = query.getSingleResult().getLastName();
+      User user = query.getSingleResult();
+      String resultName = user.getFirstName();
+      String resultLastName = user.getLastName();
       System.out.printf(">>>>>>>>>> The found user: %s, %s <<<<<<<<<<<<<", resultName, resultLastName);
    }
 }
