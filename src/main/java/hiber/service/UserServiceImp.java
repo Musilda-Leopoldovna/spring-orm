@@ -37,6 +37,11 @@ public class UserServiceImp implements UserService {
    @Transactional(readOnly = true)
    @Override
    public void getUserByCar(String model, int series) {
-      userDao.getUserByCar(model, series);
+      try {
+         userDao.getUserByCar(model, series);
+         System.out.println();
+      } catch (javax.persistence.PersistenceException e) {
+         System.err.println("The user was not found or incorrectly entered data.");
+      }
    }
 }
