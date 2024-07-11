@@ -1,7 +1,6 @@
 package hiber.model;
 
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -21,9 +20,6 @@ public class Car {
 
     @Column(name = "series")
     private int series;
-
-    @OneToOne(mappedBy = "car")
-    private User user;
 
     public Car() {
     }
