@@ -1,5 +1,7 @@
 package hiber.model;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
+@DynamicUpdate
 @Table(name = "user")
 public class User {
 
@@ -18,10 +21,10 @@ public class User {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
 
-   @Column(name = "name")
+   @Column(name = "name", length = 15)
    private String firstName;
 
-   @Column(name = "last_name")
+   @Column(name = "last_name", length = 25)
    private String lastName;
 
    @Column(name = "email")
